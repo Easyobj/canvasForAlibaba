@@ -115,7 +115,7 @@ gulp.task('htmlmin',['ejsInclude'],() => {
  */
 const publicPath = '..'
 // 替换html文件中的hash js
-gulp.task('revHtmlJs',['htmlmin'],() => {
+gulp.task('revHtmlJs',() => {
     return gulp.src(['rev/js/*.json', 'build/html/*.html'])
         .pipe(revColletor({
             replaceReved: true,
@@ -181,7 +181,7 @@ gulp.task('buildPc', (callback) => runSequence(
     ['sass','ejsInclude','buildJs'],
     ['postcss', 'hashJs', 'htmlmin'],
     'minifyCss',
-    'revHtmlCss',
+    ['revHtmlCss'],
     'revHtmlJs',
     callback
 ))
