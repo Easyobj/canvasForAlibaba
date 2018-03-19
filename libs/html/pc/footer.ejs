@@ -1,0 +1,18 @@
+<!-- plugin -->
+<% for (var i = 0 in plugin) { %>
+<script src="<%= plugin[i] %>"></script>
+<% } %>
+
+<!-- private -->
+<script src="../js/vendors.js"></script>
+<% for (var i = 0 in private) { %>
+<script src="<%= private[i] %>"></script>
+<% } %>
+
+<!-- statistics -->
+<div class="website-statistics">
+    <script src="<%= statistics %>" language="JavaScript"></script>
+</div>
+
+</body>
+</html>
